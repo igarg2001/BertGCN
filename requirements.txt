@@ -2,6 +2,6 @@ dgl -f https://data.dgl.ai/wheels/cu113/repo.html
 dglgo -f https://data.dgl.ai/wheels-test/repo.html
 pytorch-ignite
 nltk
-pytorch~=1.12.0
+torch~=1.12.0
 scikit-learn
 transformers
