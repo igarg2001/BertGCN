@@ -41,23 +41,29 @@ print("Labeled: ", len(df_labeled))
 print("Unlabeled: ", len(df_unlabeled))
 
 
-
 train_df, test_df = df_labeled, df_unlabeled
 
-train_df, eval_df = train_test_split(
-    train_df, test_size=0.2, random_state=84
+train_df, eval_df = train_test_split(train_df, test_size=0.2, random_state=84)
+
+train_list, test_list, eval_list = (
+    train_df.values.tolist(),
+    test_df.values.tolist(),
+    eval_df.values.tolist(),
 )
 
-train_list, test_list, eval_list = train_df.values.tolist(), test_df.values.tolist(), eval_df.values.tolist()
+train_or_test_list = (
+    ["train" for i in range(len(train_list))]
+    + ["eval" for i in range(len(eval_list))]
+    + ["test" for i in range(len(test_list))]
+)
 
-train_or_test_list = ["train" for i in range(len(train_list))] + [
-    "test" for i in range(len(test_list))
-] + ["eval" for i in range(len(eval_list))]
+sentences = (
+    [i[0] for i in train_list] + [i[0] for i in eval_list] + [i[0] for i in test_list]
+)
 
-sentences = [i[0] for i in train_list] + [i[0] for i in test_list] + [i[0] for i in eval_list]
-
-labels = [i[1] for i in train_list] + [i[1] for i in test_list] + [i[1] for i in eval_list]
-
+labels = (
+    [i[1] for i in train_list] + [i[1] for i in eval_list] + [i[1] for i in test_list]
+)
 
 
 meta_data_list = []
