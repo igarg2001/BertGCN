@@ -20,7 +20,7 @@ def concatenate(title, keyword, abstract):
 
 
 dataset_name = "covid-semi"
-df = pd.read_excel("dataset.xlsx")
+df = pd.read_excel("C:\\Coding\\ML\\PubMed Covid19\\dataset.xlsx")
 df.dropna(subset=["Article title", "Article abstract"], inplace=True)
 df.fillna({"Contextual": -1}, inplace=True)
 
