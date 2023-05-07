@@ -1,13 +1,13 @@
-data/ind.*
+# data/ind.*
 models
 __pycache__
-data/*.*.*
-data/*shuffle*
-data/*vector*
-data/corpus/*labels*
-data/corpus/*shuffle*
-.ipynb_checkpoints
-data/corpus/*vocab*
+# data/*.*.*
+# data/*shuffle*
+# data/*vector*
+# data/corpus/*labels*
+# data/corpus/*shuffle*
+# .ipynb_checkpoints
+# data/corpus/*vocab*
 nohup.out
 checkpoints/*
 checkpoint/*
